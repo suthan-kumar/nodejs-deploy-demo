@@ -11,6 +11,8 @@ app.use(express.json());
 const StudentRoutes = require("./routes/student");
 app.use("/api/student", StudentRoutes);
 
-app.listen(3000, () => {
-  console.log("Express running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Express running on port", PORT);
 });
