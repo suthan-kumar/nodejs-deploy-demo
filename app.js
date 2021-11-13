@@ -6,6 +6,13 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "Application running successfully",
+  });
+});
+
 // MVC Pattern
 // Model View Controller
 const StudentRoutes = require("./routes/student");
